@@ -36,7 +36,7 @@ const Hero = () => {
       />
 
       {/* Main content */}
-      <div className="relative z-10 text-center px-4 sm:px-8 max-w-4xl mx-auto flex-1 flex flex-col items-center justify-center pt-40">
+      <div className="relative z-10 text-center px-4 sm:px-8 max-w-4xl mx-auto flex-1 flex flex-col items-center justify-center pt-30">
         {/* Headline */}
         <h1 className="font-heading font-bold text-5xl sm:text-6xl lg:text-7xl text-white leading-tight mb-6">
           {['Navigate Your', 'Immigration Journey', 'With Confidence'].map(
