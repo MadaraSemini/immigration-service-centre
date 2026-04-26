@@ -71,21 +71,35 @@ const Navbar = () => {
 
   return (
     <nav
-      className={`fixed top-0 left-0 right-0 z-40 transition-all duration-300 ${
-        scrolled ? 'bg-primary shadow-lg py-5' : 'bg-transparent py-7'
+      className={`fixed top-0 left-0 right-0 z-40 transition-all duration-400 ${
+        scrolled ? 'bg-primary shadow-xl py-3' : 'bg-transparent py-8'
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
         {/* Logo */}
         <button onClick={handleLogoClick} className="flex items-center gap-3 focus:outline-none">
-          <div className="w-13 h-13 rounded-full bg-accent flex items-center justify-center font-bold text-white text-base leading-none" style={{ width: '52px', height: '52px' }}>
+          <div
+            className={`rounded-full bg-accent flex items-center justify-center font-bold text-white transition-all duration-400 ${
+              scrolled ? 'w-12 h-12 text-sm' : 'w-16 h-16 text-lg'
+            }`}
+          >
             ICS
           </div>
           <div className="text-left">
-            <div className="font-heading font-bold text-white text-2xl leading-tight">
+            <div
+              className={`font-heading font-bold text-white leading-tight transition-all duration-400 ${
+                scrolled ? 'text-xl' : 'text-4xl'
+              }`}
+            >
               Immigration Consulting
             </div>
-            <div className="text-accent text-sm font-body tracking-wide">Service · Sri Lanka</div>
+            <div
+              className={`text-accent font-body tracking-wide transition-all duration-400 ${
+                scrolled ? 'text-xs' : 'text-base'
+              }`}
+            >
+              Service · Sri Lanka
+            </div>
           </div>
         </button>
 
