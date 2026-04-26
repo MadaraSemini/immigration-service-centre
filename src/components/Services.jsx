@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion'
+import { useNavigate } from 'react-router-dom'
 import {
   FaPassport,
   FaHome,
@@ -21,14 +22,19 @@ const iconMap = {
 
 const ServiceCard = ({ service, index, onServiceSelect }) => {
   const Icon = iconMap[service.icon]
+  const navigate = useNavigate()
 
   const handleClick = () => {
-    onServiceSelect(service.title)
-    const contactSection = document.querySelector('#contact')
-    if (contactSection) {
-      setTimeout(() => {
-        contactSection.scrollIntoView({ behavior: 'smooth' })
-      }, 50)
+    if (service.slug) {
+      navigate(`/services/${service.slug}`)
+    } else {
+      onServiceSelect(service.title)
+      const contactSection = document.querySelector('#contact')
+      if (contactSection) {
+        setTimeout(() => {
+          contactSection.scrollIntoView({ behavior: 'smooth' })
+        }, 50)
+      }
     }
   }
 
@@ -80,7 +86,7 @@ const Services = ({ onServiceSelect }) => {
                   Our Immigration Services
                 </h2>
                 <p className="font-body text-muted mt-3 text-base">
-                  Click any service to get in touch with us instantly.
+                  Click any service to learn more and get expert guidance.
                 </p>
               </div>
             </div>

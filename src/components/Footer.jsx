@@ -1,4 +1,5 @@
 import { FaFacebook, FaInstagram, FaWhatsapp, FaTelegram } from 'react-icons/fa'
+import { useNavigate } from 'react-router-dom'
 import { services } from '../data/services'
 
 const navLinks = [
@@ -25,17 +26,23 @@ const socialLinks = [
 ]
 
 const Footer = ({ onServiceSelect }) => {
+  const navigate = useNavigate()
+
   const scrollTo = (href) => {
     const el = document.querySelector(href)
     if (el) el.scrollIntoView({ behavior: 'smooth' })
   }
 
-  const handleServiceClick = (serviceTitle) => {
-    onServiceSelect(serviceTitle)
-    setTimeout(() => {
-      const el = document.querySelector('#contact')
-      if (el) el.scrollIntoView({ behavior: 'smooth' })
-    }, 50)
+  const handleServiceClick = (service) => {
+    if (service.slug) {
+      navigate(`/services/${service.slug}`)
+    } else {
+      onServiceSelect(service.title)
+      setTimeout(() => {
+        const el = document.querySelector('#contact')
+        if (el) el.scrollIntoView({ behavior: 'smooth' })
+      }, 50)
+    }
   }
 
   return (
@@ -46,14 +53,14 @@ const Footer = ({ onServiceSelect }) => {
           {/* Col 1 — Brand */}
           <div>
             <div className="flex items-center gap-3 mb-4">
-              <div className="w-10 h-10 rounded-full bg-accent flex items-center justify-center font-bold text-white text-sm">
+              <div className="rounded-full bg-accent flex items-center justify-center font-bold text-white text-base" style={{ width: '52px', height: '52px' }}>
                 ICS
               </div>
               <div>
-                <div className="font-heading font-bold text-lg text-white leading-tight">
+                <div className="font-heading font-bold text-xl text-white leading-tight">
                   Immigration Consulting
                 </div>
-                <div className="text-accent text-xs font-body">Service</div>
+                <div className="text-accent text-sm font-body">Service · Sri Lanka</div>
               </div>
             </div>
             <p className="font-body text-white/60 text-sm leading-relaxed mb-6">
@@ -104,7 +111,7 @@ const Footer = ({ onServiceSelect }) => {
               {services.map((s) => (
                 <li key={s.id}>
                   <button
-                    onClick={() => handleServiceClick(s.title)}
+                    onClick={() => handleServiceClick(s)}
                     className="font-body text-sm text-white/60 hover:text-accent transition-colors duration-200 text-left"
                   >
                     {s.title}

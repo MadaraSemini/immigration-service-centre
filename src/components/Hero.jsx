@@ -36,19 +36,7 @@ const Hero = () => {
       />
 
       {/* Main content */}
-      <div className="relative z-10 text-center px-4 sm:px-8 max-w-4xl mx-auto flex-1 flex flex-col items-center justify-center">
-        {/* Tag */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.2 }}
-          className="mb-6"
-        >
-          <span className="inline-block bg-accent/20 border border-accent/40 text-accent text-xs font-body font-semibold uppercase tracking-[0.2em] px-4 py-2 rounded-full">
-            Trusted Immigration Experts · Sri Lanka
-          </span>
-        </motion.div>
-
+      <div className="relative z-10 text-center px-4 sm:px-8 max-w-4xl mx-auto flex-1 flex flex-col items-center justify-center pt-32">
         {/* Headline */}
         <h1 className="font-heading font-bold text-5xl sm:text-6xl lg:text-7xl text-white leading-tight mb-6">
           {['Navigate Your', 'Immigration Journey', 'With Confidence'].map(

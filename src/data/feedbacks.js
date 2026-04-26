@@ -2,7 +2,8 @@ export const textFeedbacks = [
   {
     id: 1,
     name: 'Rajesh Kumar',
-    country: '🇮🇳',
+    countryCode: 'IN',
+    country: 'India',
     initials: 'RK',
     color: '#E8A020',
     service: 'Visit Visa Extension',
@@ -12,7 +13,8 @@ export const textFeedbacks = [
   {
     id: 2,
     name: 'Sarah Williams',
-    country: '🇬🇧',
+    countryCode: 'GB',
+    country: 'United Kingdom',
     initials: 'SW',
     color: '#1B3A6B',
     service: 'Work Visa Consulting',
@@ -22,7 +24,8 @@ export const textFeedbacks = [
   {
     id: 3,
     name: 'Ahmed Al-Rashid',
-    country: '🇦🇪',
+    countryCode: 'AE',
+    country: 'United Arab Emirates',
     initials: 'AA',
     color: '#0D9488',
     service: 'Residence Visa Consulting',
@@ -32,7 +35,8 @@ export const textFeedbacks = [
   {
     id: 4,
     name: 'Yuki Tanaka',
-    country: '🇯🇵',
+    countryCode: 'JP',
+    country: 'Japan',
     initials: 'YT',
     color: '#7C3AED',
     service: 'Visit Visa Extension',
@@ -42,7 +46,8 @@ export const textFeedbacks = [
   {
     id: 5,
     name: 'Maria Santos',
-    country: '🇧🇷',
+    countryCode: 'BR',
+    country: 'Brazil',
     initials: 'MS',
     color: '#DC2626',
     service: 'Business Registration Consulting',
@@ -52,10 +57,11 @@ export const textFeedbacks = [
   {
     id: 6,
     name: 'Chen Wei',
-    country: '🇨🇳',
+    countryCode: 'CN',
+    country: 'China',
     initials: 'CW',
     color: '#059669',
-    service: 'Medical Visa Consulting',
+    service: 'Residence Visa Consulting',
     rating: 5,
     text: 'Friendly and professional agents. They were available to answer all my questions throughout the process.',
   },
