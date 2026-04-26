@@ -10,8 +10,24 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
-    <script type="module" crossorigin src="/immigration-service-centre/assets/index-mKYadSt3.js"></script>
-    <link rel="stylesheet" crossorigin href="/immigration-service-centre/assets/index-DgH76reM.css">
+    <script>
+      // Handle GitHub Pages SPA redirect from 404.html
+      (function (l) {
+        if (l.search[1] === 'p' && l.search.indexOf('?p=/') === 0) {
+          var decoded = l.search.slice(1).split('&').map(function (s) {
+            return s.replace(/~and~/g, '&');
+          });
+          var path = decoded[0].slice(2); // strip 'p=/'
+          var query = decoded[1] ? '?' + decoded[1].slice(2) : '';
+          window.history.replaceState(
+            null, null,
+            l.pathname.replace(/\/$/, '') + '/' + path + query + l.hash
+          );
+        }
+      }(window.location));
+    </script>
+    <script type="module" crossorigin src="/immigration-service-centre/assets/index-x0FpxLSC.js"></script>
+    <link rel="stylesheet" crossorigin href="/immigration-service-centre/assets/index-AJO1UMPk.css">
   </head>
   <body>
     <div id="root"></div>
