@@ -165,7 +165,7 @@ const ContactUs = ({ selectedService, setSelectedService }) => {
 
           {/* RIGHT — Form */}
           <ScrollReveal delay={0.1}>
-            <div className="bg-white rounded-2xl shadow-lg p-8">
+            <div className="bg-white rounded-2xl shadow-lg p-5 sm:p-8">
               <h3 className="font-heading font-bold text-2xl text-bodytext mb-6">
                 Send Us a Message
               </h3>

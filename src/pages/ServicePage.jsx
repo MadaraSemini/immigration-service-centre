@@ -93,7 +93,7 @@ const ServicePage = () => {
       <Navbar />
 
       {/* Page Hero */}
-      <section className="bg-primary pt-24 pb-14">
+      <section className="bg-primary pt-16 lg:pt-24 pb-8 lg:pb-14">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <button
             onClick={() => navigate('/')}

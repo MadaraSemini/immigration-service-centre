@@ -43,6 +43,7 @@ const Navbar = () => {
   }, [])
 
   const handleNavClick = (href) => {
+    const wasMenuOpen = menuOpen
     setMenuOpen(false)
     setServicesOpen(false)
     if (isDetailPage) {
@@ -51,8 +52,15 @@ const Navbar = () => {
       return
     }
     setActiveLink(href)
-    const target = document.querySelector(href)
-    if (target) target.scrollIntoView({ behavior: 'smooth' })
+    const scrollToTarget = () => {
+      const target = document.querySelector(href)
+      if (target) target.scrollIntoView({ behavior: 'smooth' })
+    }
+    if (wasMenuOpen) {
+      setTimeout(scrollToTarget, 300)
+    } else {
+      scrollToTarget()
+    }
   }
 
   const handleLogoClick = () => {
@@ -72,7 +80,7 @@ const Navbar = () => {
   return (
     <nav
       className={`fixed top-0 left-0 right-0 z-40 transition-all duration-400 ${
-        scrolled ? 'bg-primary shadow-xl py-3' : 'bg-transparent py-8'
+        scrolled ? 'bg-primary shadow-xl py-3' : 'bg-transparent py-5 lg:py-8'
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
@@ -80,7 +88,7 @@ const Navbar = () => {
         <button onClick={handleLogoClick} className="flex items-center gap-3 focus:outline-none">
           <div
             className={`rounded-full bg-accent flex items-center justify-center font-bold text-white transition-all duration-400 ${
-              scrolled ? 'w-12 h-12 text-sm' : 'w-16 h-16 text-lg'
+              scrolled ? 'w-10 h-10 text-xs' : 'w-12 h-12 text-sm lg:w-16 lg:h-16 lg:text-lg'
             }`}
           >
             ICS
@@ -88,14 +96,14 @@ const Navbar = () => {
           <div className="text-left">
             <div
               className={`font-heading font-bold text-white leading-tight transition-all duration-400 ${
-                scrolled ? 'text-xl' : 'text-4xl'
+                scrolled ? 'text-base lg:text-xl' : 'text-xl lg:text-4xl'
               }`}
             >
               Immigration Consulting
             </div>
             <div
               className={`text-accent font-body tracking-wide transition-all duration-400 ${
-                scrolled ? 'text-xs' : 'text-base'
+                scrolled ? 'text-xs' : 'text-xs lg:text-base'
               }`}
             >
               Service · Sri Lanka

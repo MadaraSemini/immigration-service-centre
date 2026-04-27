@@ -156,7 +156,7 @@ const NewsPage = () => {
       <Navbar />
 
       {/* Hero */}
-      <section className="bg-primary pt-24 pb-0 relative overflow-hidden">
+      <section className="bg-primary pt-16 lg:pt-24 pb-0 relative overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-10">
           <button
             onClick={() => navigate('/')}
@@ -209,7 +209,7 @@ const NewsPage = () => {
           />
           {imgError && (
             <div className="absolute inset-0 flex items-center justify-center">
-              <span className="font-heading font-bold text-white/10 text-[120px] select-none leading-none">
+              <span className="font-heading font-bold text-white/10 text-6xl sm:text-[120px] select-none leading-none">
                 ICS
               </span>
             </div>

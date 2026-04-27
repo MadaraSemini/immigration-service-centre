@@ -36,9 +36,9 @@ const Hero = () => {
       />
 
       {/* Main content */}
-      <div className="relative z-10 text-center px-4 sm:px-8 max-w-4xl mx-auto flex-1 flex flex-col items-center justify-center pt-30">
+      <div className="relative z-10 text-center px-4 sm:px-8 max-w-4xl mx-auto flex-1 flex flex-col items-center justify-center pt-24 lg:pt-30">
         {/* Headline */}
-        <h1 className="font-heading font-bold text-5xl sm:text-6xl lg:text-7xl text-white leading-tight mb-6">
+        <h1 className="font-heading font-bold text-4xl sm:text-6xl lg:text-7xl text-white leading-tight mb-6">
           {['Navigate Your', 'Immigration Journey', 'With Confidence'].map(
             (line, lineIndex) => (
               <span key={lineIndex} className="block overflow-hidden">
@@ -107,14 +107,14 @@ const Hero = () => {
         transition={{ duration: 0.7, delay: 1.2 }}
         className="relative z-10 w-full mt-8"
       >
-        <div className="max-w-4xl mx-auto px-4 pb-12">
+        <div className="max-w-4xl mx-auto px-4 pb-8 sm:pb-12">
           <div className="grid grid-cols-3 gap-4 bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl px-6 py-6">
             {stats.map((stat, i) => (
               <div key={i} className="text-center">
-                <div className="font-heading font-bold text-3xl sm:text-4xl text-accent">
+                <div className="font-heading font-bold text-xl sm:text-3xl text-accent">
                   {stat.value}
                 </div>
-                <div className="font-body text-white/75 text-xs sm:text-sm mt-1">
+                <div className="font-body text-white/75 text-xs mt-1">
                   {stat.label}
                 </div>
               </div>

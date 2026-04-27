@@ -33,18 +33,18 @@ const VisaBlog = () => {
           <div className="bg-white rounded-2xl shadow-lg overflow-hidden">
             <div className="flex flex-col lg:flex-row">
               {/* Icon side */}
-              <div className="lg:w-64 bg-primary flex flex-col items-center justify-center p-10 gap-4 flex-shrink-0">
+              <div className="lg:w-64 bg-primary flex flex-col items-center justify-center p-6 lg:p-10 gap-4 flex-shrink-0">
                 <div className="w-20 h-20 rounded-full bg-accent/20 border-2 border-accent flex items-center justify-center">
                   <FaPassport size={36} color="#E8A020" />
                 </div>
                 <div className="text-center">
-                  <div className="font-heading font-bold text-4xl text-white">3×</div>
+                  <div className="font-heading font-bold text-3xl lg:text-4xl text-white">3×</div>
                   <div className="font-body text-white/70 text-sm mt-1">
                     Maximum Extensions
                   </div>
                 </div>
                 <div className="text-center">
-                  <div className="font-heading font-bold text-3xl text-accent">1 Day</div>
+                  <div className="font-heading font-bold text-2xl lg:text-3xl text-accent">1 Day</div>
                   <div className="font-body text-white/70 text-sm mt-1">
                     Processing Time
                   </div>

@@ -442,7 +442,7 @@ const FeedbackForm = () => {
 
   return (
     <div className="max-w-2xl mx-auto">
-      <div className="bg-white rounded-2xl shadow-lg p-8">
+      <div className="bg-white rounded-2xl shadow-lg p-5 sm:p-8">
         <h3 className="font-heading font-bold text-2xl text-bodytext mb-2">
           Share Your Experience
         </h3>
@@ -584,7 +584,7 @@ const FeedbackForm = () => {
                 onDragLeave={() => setDragging(false)}
                 onDrop={handleDrop}
                 onClick={() => fileInputRef.current?.click()}
-                className={`flex flex-col items-center justify-center gap-3 border-2 border-dashed rounded-xl px-6 py-8 cursor-pointer transition-all duration-200 ${
+                className={`flex flex-col items-center justify-center gap-3 border-2 border-dashed rounded-xl px-4 py-6 sm:py-8 cursor-pointer transition-all duration-200 ${
                   dragging
                     ? 'border-accent bg-accent/5'
                     : 'border-gray-200 bg-gray-50 hover:border-accent hover:bg-accent/5'
