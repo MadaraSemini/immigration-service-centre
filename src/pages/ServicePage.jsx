@@ -73,7 +73,7 @@ const ServicePage = () => {
               onClick={() => navigate('/')}
               className="inline-flex items-center gap-2 px-6 py-3 bg-primary text-white font-body font-semibold rounded-xl hover:bg-blue-900 transition-colors"
             >
-              <FaArrowLeft size={14} /> Back to Home
+              {/* <FaArrowLeft size={14} /> Back to Home */}
             </button>
           </div>
         </div>
@@ -99,7 +99,7 @@ const ServicePage = () => {
             onClick={() => navigate('/')}
             className="inline-flex items-center gap-2 text-white/60 hover:text-white font-body text-sm mb-6 transition-colors duration-200"
           >
-            <FaArrowLeft size={12} /> Back to Home
+            {/* <FaArrowLeft size={12} /> Back to Home */}
           </button>
           <h1 className="font-heading font-bold text-4xl sm:text-5xl text-white leading-tight mb-3">
             {page.heroTitle}

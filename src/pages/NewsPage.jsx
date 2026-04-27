@@ -142,7 +142,7 @@ const NewsPage = () => {
               onClick={() => navigate('/')}
               className="inline-flex items-center gap-2 px-6 py-3 bg-primary text-white font-body font-semibold rounded-xl hover:bg-blue-900 transition-colors"
             >
-              <FaArrowLeft size={14} /> Back to Home
+              {/* <FaArrowLeft size={14} /> Back to Home */}
             </button>
           </div>
         </div>
@@ -162,7 +162,7 @@ const NewsPage = () => {
             onClick={() => navigate('/')}
             className="inline-flex items-center gap-2 text-white/60 hover:text-white font-body text-sm mb-6 transition-colors duration-200"
           >
-            <FaArrowLeft size={12} /> Back to Home
+            {/* <FaArrowLeft size={12} /> Back to Home */}
           </button>
 
           {/* Category + meta */}
