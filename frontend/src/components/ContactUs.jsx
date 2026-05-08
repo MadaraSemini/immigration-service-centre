@@ -31,7 +31,7 @@ const contactDetails = [
   {
     icon: FaEnvelope,
     label: 'Email',
-    value: 'immigrationconsulting@gmail.com',
+    value: 'krishalvidushka97@gmail.com',
   },
   {
     icon: FaClock,
@@ -50,6 +50,8 @@ const ContactUs = ({ selectedService, setSelectedService }) => {
   })
   const [errors, setErrors] = useState({})
   const [submitted, setSubmitted] = useState(false)
+  const [loading, setLoading] = useState(false)
+  const [serverError, setServerError] = useState('')
   const selectRef = useRef(null)
 
   // Sync selectedService prop → form state
@@ -76,17 +78,31 @@ const ContactUs = ({ selectedService, setSelectedService }) => {
     if (name === 'service' && setSelectedService) setSelectedService(value)
   }
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault()
     const errs = validate()
     if (Object.keys(errs).length > 0) {
       setErrors(errs)
       return
     }
-    setSubmitted(true)
-    setForm({ name: '', email: '', phone: '', service: '', message: '' })
-    if (setSelectedService) setSelectedService('')
-    setTimeout(() => setSubmitted(false), 5000)
+    setLoading(true)
+    setServerError('')
+    try {
+      const res = await fetch(`${import.meta.env.VITE_API_URL}/api/contact`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(form),
+      })
+      if (!res.ok) throw new Error('Server error')
+      setSubmitted(true)
+      setForm({ name: '', email: '', phone: '', service: '', message: '' })
+      if (setSelectedService) setSelectedService('')
+      setTimeout(() => setSubmitted(false), 5000)
+    } catch {
+      setServerError('Something went wrong. Please try again or contact us via WhatsApp.')
+    } finally {
+      setLoading(false)
+    }
   }
 
   const inputClass = (field) =>
@@ -169,6 +185,20 @@ const ContactUs = ({ selectedService, setSelectedService }) => {
               <h3 className="font-heading font-bold text-2xl text-bodytext mb-6">
                 Send Us a Message
               </h3>
+
+              {/* Error banner */}
+              <AnimatePresence>
+                {serverError && (
+                  <motion.div
+                    initial={{ opacity: 0, y: -10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: -10 }}
+                    className="flex items-center gap-3 bg-red-50 border border-red-200 rounded-xl px-4 py-3 mb-4"
+                  >
+                    <p className="font-body text-sm text-red-700">{serverError}</p>
+                  </motion.div>
+                )}
+              </AnimatePresence>
 
               {/* Success toast */}
               <AnimatePresence>
@@ -283,9 +313,10 @@ const ContactUs = ({ selectedService, setSelectedService }) => {
 
                 <button
                   type="submit"
-                  className="w-full py-4 bg-accent text-white font-body font-semibold rounded-xl hover:bg-amber-500 transition-all duration-300 hover:shadow-lg hover:shadow-accent/30 hover:-translate-y-0.5 mt-2"
+                  disabled={loading}
+                  className="w-full py-4 bg-accent text-white font-body font-semibold rounded-xl hover:bg-amber-500 transition-all duration-300 hover:shadow-lg hover:shadow-accent/30 hover:-translate-y-0.5 mt-2 disabled:opacity-60 disabled:cursor-not-allowed"
                 >
-                  Send Message →
+                  {loading ? 'Sending…' : 'Send Message →'}
                 </button>
               </form>
             </div>

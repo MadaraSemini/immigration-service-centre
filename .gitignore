@@ -1,14 +1,18 @@
 # Dependencies
 node_modules/
+frontend/node_modules/
 
 # Build output
 dist/
+frontend/dist/
 .vite/
 
 # Environment
 .env
 .env.local
 .env.*.local
+frontend/.env.local
+backend/.env
 
 # Design/planning docs
 *.pdf

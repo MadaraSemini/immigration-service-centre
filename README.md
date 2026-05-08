@@ -117,5 +117,5 @@ npm run deploy
 | Address | 51/E Galle Road, Kamburugamuwa, Sri Lanka |
 | Phone 1 | 077 274 4628 |
 | Phone 2 | 076 369 6592 |
-| Email | immigrationconsulting@gmail.com |
+| Email | krishalvidushka97@gmail.com |
 | Hours | Mon–Sat: 8:00 AM – 6:00 PM |
