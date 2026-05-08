@@ -87,6 +87,11 @@ const ContactUs = ({ selectedService, setSelectedService }) => {
     }
     setLoading(true)
     setServerError('')
+    if (!import.meta.env.VITE_API_URL) {
+      setServerError('Contact form is not configured yet. Please reach us via WhatsApp.')
+      setLoading(false)
+      return
+    }
     try {
       const res = await fetch(`${import.meta.env.VITE_API_URL}/api/contact`, {
         method: 'POST',
